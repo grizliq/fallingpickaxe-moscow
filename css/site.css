@@ -101,10 +101,6 @@
 .md-promo-crimson__card .md-mc--promo { font-size: clamp(26px, 4vw, 40px); justify-items: center; }
 .md-promo-crimson__text { margin: 0; max-width: 520px; font-size: 15px; line-height: 1.45; color: #ffe98a; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45); }
 
-/* Подвал: партнёры */
-.md-footer-split__partners { margin: 0; width: 100%; font-size: 12px; color: rgba(255, 255, 255, 0.6); }
-.md-footer-split__partners a { color: var(--md-gold); text-decoration: none; }
-.md-footer-split__partners a:hover { text-decoration: underline; }
 
 /* md-mc: один текстовый узел — сам элемент рисует тень, ::before обводку, ::after золотую заливку */
 .md-mc { position: relative; display: block; text-align: center; padding-top: 5px;
