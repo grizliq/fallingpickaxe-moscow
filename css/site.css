@@ -59,7 +59,9 @@
 
 /* Об игре: несколько абзацев */
 .md-about-split__panel { display: grid; gap: 12px; }
-.md-about-split__media img { width: min(340px, 62vw); }
+.md-about-split__grid { grid-template-columns: 0.9fr 1.1fr; gap: 20px; }
+.md-about-split__media img { width: min(460px, 100%); }
+@media (max-width: 760px) { .md-about-split__media img { width: min(360px, 80vw); } }
 
 /* Механика 02-video-features */
 .md-promo-features { padding: 10px 0 18px; }
