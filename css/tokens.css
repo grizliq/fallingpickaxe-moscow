@@ -1,0 +1,30 @@
+:root {
+  --md-bg-deep: #1a0f0a;
+  --md-bg-page: #0a0806;
+  --md-brick: #2d1810;
+  --md-panel: rgba(70, 70, 70, 0.84);
+  --md-panel-border: rgba(0, 0, 0, 0.55);
+  --md-panel-inset: rgba(255, 255, 255, 0.12);
+  --md-gold-top: #fef57f;
+  --md-gold-bot: #e8a113;
+  --md-gold: #f0bd2c;
+  --md-btn: #e8a012;
+  --md-btn-gray: rgba(160, 160, 160, 0.85);
+  --md-stroke: #3f0f0f;
+  --md-text: #f5f0e8;
+  --md-text-soft: rgba(255, 255, 255, 0.92);
+  --md-shadow: rgba(0, 0, 0, 0.65);
+  --md-bullet: #e9a516;
+  --md-wrap: 980px;
+  --md-wrap-wide: 1200px;
+  --md-font-pixel: "Minecraft Ten font cyrillic", system-ui, sans-serif;
+  --md-font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@font-face {
+  font-family: "Minecraft Ten font cyrillic";
+  src: url("../assets/fonts/minecraft-ten-font-cyrillic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,480 @@
+/* ============================================================
+   Falling Pickaxe — style.css
+   Порядок подключения в index.html:
+     tokens.css → кнопки.css → palette-dark.css → style.css
+   ============================================================ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  font-family: var(--md-font-body);
+  color: var(--md-text);
+  background: var(--md-page-bg);
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Фон-слой: размытая картинка + затемняющий градиент поверх */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.page-bg::before {
+  content: "";
+  position: absolute;
+  inset: -40px;                 /* вылет за экран, иначе blur даёт кайму по краям */
+  background: url("../assets/bg/bg.jpg") center / cover no-repeat;
+  filter: blur(10px);
+  transform: scale(1.06);
+}
+
+.page-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 8, 6, 0.60) 0%, rgba(10, 8, 6, 0.82) 100%);
+}
+
+@media (max-width: 640px) {
+  .page-bg::before { filter: blur(6px); }
+}
+
+img { max-width: 100%; height: auto; }
+a  { color: var(--md-gold); }
+
+/* Ритм секций */
+main > section { padding-top: 22px; padding-bottom: 22px; }
+@media (max-width: 640px) {
+  main > section { padding-top: 14px; padding-bottom: 14px; }
+}
+
+/* ============================================================
+   Шапка 04-nav-underline
+   ============================================================ */
+.md-header-under { padding: 14px 0 0; }
+
+.md-header-under__inner {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.md-header-under__logo { line-height: 0; }
+.md-header-under__logo img {
+  display: block;
+  width: auto; height: auto;
+  max-height: 64px;
+  max-width: min(220px, 50vw);
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px var(--md-shadow));
+}
+
+.md-header-under__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  width: 100%;
+  padding: 10px 0 12px;
+  border-bottom: 3px solid var(--md-gold);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.md-header-under__nav a {
+  font-family: var(--md-font-pixel);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--md-text);
+  text-shadow: 0 2px 0 var(--md-shadow);
+  text-decoration: none;
+  padding: 4px 2px;
+  transition: color 0.15s ease;
+}
+.md-header-under__nav a:hover { color: var(--md-gold); }
+
+/* ============================================================
+   Главная 03-video-cta
+   ============================================================ */
+.md-hero-simple { padding: 32px 0 24px; }
+
+.md-hero-simple__inner {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.md-hero-simple__kicker {
+  margin: 0;
+  font-family: var(--md-font-pixel);
+  font-size: clamp(22px, 3.6vw, 30px);
+  text-transform: uppercase;
+  color: var(--md-text);
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.55);
+  line-height: 1.35;
+}
+
+.md-hero-simple__frame {
+  width: min(640px, 92vw);
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 4px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+.md-hero-simple__frame video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.md-hero-simple__note {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 620px;
+}
+
+.md-hero-simple__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   VPN 03-plain-btn
+   ============================================================ */
+.md-vpn-plain { padding: 12px 0 18px; }
+.md-vpn-plain__inner { display: flex; justify-content: center; }
+.md-vpn-plain__cta {
+  min-width: 260px;
+  height: 60px;
+  font-size: 20px;
+  padding: 0 32px;
+  letter-spacing: 0.16em;
+}
+
+/* ============================================================
+   Об игре 03-two-col
+   ============================================================ */
+.md-about-split { padding: 12px 0 18px; }
+
+.md-about-split__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.md-about-split__media { display: grid; place-items: center; }
+.md-about-split__media img {
+  width: min(320px, 62vw);
+  height: auto;
+  filter: drop-shadow(0 14px 22px var(--md-shadow));
+}
+
+.md-about-split__copy .md-title {
+  text-align: left;
+  font-size: clamp(18px, 2.6vw, 26px);
+  line-height: 1.35;
+  max-width: none;
+  white-space: nowrap;
+}
+
+.md-about-split__lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--md-text-soft);
+}
+
+@media (max-width: 760px) {
+  .md-about-split__grid { grid-template-columns: 1fr; }
+  .md-about-split__copy .md-title {
+    text-align: center;
+    white-space: normal;
+    font-size: clamp(16px, 4.5vw, 22px);
+  }
+}
+
+/* ============================================================
+   Бонусы 02-gold-cards
+   ============================================================ */
+.md-bonus-cards { padding: 16px 0 24px; }
+
+.md-bonus-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.md-bonus-cards__card {
+  background: var(--md-panel);
+  border: 3px solid var(--md-panel-border);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 2px var(--md-panel-inset);
+  padding: 18px 14px;
+  text-align: center;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.md-bonus-cards__card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 30px rgba(0, 0, 0, 0.42),
+    inset 0 0 0 2px var(--md-panel-inset);
+}
+.md-bonus-cards__card img {
+  width: 72px; height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.4));
+}
+.md-bonus-cards__card h3 {
+  margin: 0;
+  font-family: var(--md-font-pixel);
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--md-gold);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.55);
+  line-height: 1.35;
+}
+.md-bonus-cards__card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--md-text-soft);
+}
+
+@media (max-width: 720px) {
+  .md-bonus-cards__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Как играть 03-horizontal
+   ============================================================ */
+.md-how-h { padding: 10px 0 18px; }
+
+.md-how-h__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.md-how-h__step {
+  background: var(--md-panel);
+  border: 3px solid var(--md-panel-border);
+  box-shadow: inset 0 0 0 2px var(--md-panel-inset);
+  padding: 16px 12px;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  text-align: center;
+}
+
+.md-how-h__step span {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  font-family: var(--md-font-pixel);
+  background: var(--md-btn);
+  color: #1a0f0a;
+  border: 2px solid var(--md-stroke);
+  box-shadow: 0 3px 0 var(--md-shadow);
+  font-size: 18px;
+}
+
+.md-how-h__step p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--md-text-soft);
+}
+
+@media (max-width: 720px) {
+  .md-how-h__row { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ 02-stacked
+   ============================================================ */
+.md-faq-stack { padding: 16px 0 24px; }
+
+.md-faq-stack__dl {
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.md-faq-stack__row {
+  background: var(--md-panel);
+  border: 3px solid var(--md-panel-border);
+  box-shadow: inset 0 0 0 2px var(--md-panel-inset);
+  padding: 14px 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.md-faq-stack__row dt {
+  font-family: var(--md-font-pixel);
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--md-gold);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.02em;
+}
+
+.md-faq-stack__row dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--md-text-soft);
+}
+
+/* ============================================================
+   Подвал 03-split-links
+   ============================================================ */
+.md-footer-split { padding: 18px 0 26px; }
+
+.md-footer-split__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
+}
+.md-footer-split__copy {
+  margin: 0;
+  font-family: var(--md-font-pixel);
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--md-text-soft);
+  text-shadow: 0 2px 0 var(--md-shadow);
+}
+.md-footer-split__nav { display: flex; gap: 14px; flex-wrap: wrap; }
+.md-footer-split__nav a {
+  font-family: var(--md-font-pixel);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--md-gold);
+  text-decoration: none;
+}
+.md-footer-split__nav a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .md-footer-split__inner { justify-content: center; text-align: center; }
+}
+
+/* ============================================================
+   Модалка 01-notify-crimson
+   ============================================================ */
+.md-notify {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.md-notify[hidden] { display: none !important; }
+
+.md-notify__overlay {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.62);
+  cursor: pointer;
+}
+
+.md-notify__card {
+  position: relative;
+  z-index: 1;
+  width: min(540px, calc(100vw - 32px));
+  border: 8px solid #e8a113;
+  background: radial-gradient(circle at 50% 35%, #5d1414 0%, #4b0f10 62%, #3d0c0d 100%);
+  padding: 18px 20px 22px;
+  text-align: center;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  animation: notifyIn 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+@keyframes notifyIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.md-notify__gem {
+  display: block;
+  width: 130px;
+  height: auto;
+  image-rendering: pixelated;
+}
+.md-notify__title {
+  font-size: clamp(1.4rem, 4.4vw, 2.15rem);
+  line-height: 1.35;
+  margin: 8px 0 4px;
+}
+.md-notify__cta { min-width: 186px; }
+
+/* Крестик закрытия */
+.md-notify__x {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: var(--md-font-pixel);
+  font-size: 26px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.15s ease;
+}
+.md-notify__x:hover { color: var(--md-gold); }
+
+/* Текст-байт под заголовком */
+.md-notify__lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 420px;
+}
+
+/* Ссылка «Позже» */
+.md-notify__skip {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  padding: 2px 6px;
+  transition: color 0.15s ease;
+}
+.md-notify__skip:hover { color: rgba(255, 255, 255, 0.8); }

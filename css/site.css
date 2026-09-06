@@ -1,0 +1,115 @@
+/* ============================================================
+   fallingpickaxe.moscow — блоки поверх style.css
+   ============================================================ */
+
+/* Шапка 03-logo-left-cta + nav, липкая */
+.md-header-cta { position: sticky; top: 0; z-index: 50; padding: 10px 0;
+  background: rgba(10, 8, 6, 0.86); backdrop-filter: blur(8px);
+  border-bottom: 3px solid var(--md-gold); box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25); }
+.md-header-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.md-header-cta__logo { line-height: 0; }
+.md-header-cta__logo img { display: block; width: auto; height: auto; max-height: 52px; max-width: min(160px, 40vw);
+  object-fit: contain; filter: drop-shadow(0 6px 12px var(--md-shadow)); }
+.md-header-cta__nav { display: flex; gap: 6px 18px; flex-wrap: wrap; justify-content: center; }
+.md-header-cta__nav a { font-family: var(--md-font-pixel); text-transform: uppercase; font-size: 13px; letter-spacing: 0.04em;
+  color: var(--md-text); text-shadow: 0 2px 0 var(--md-shadow); text-decoration: none; padding: 4px 2px; transition: color 0.15s ease; }
+.md-header-cta__nav a:hover { color: var(--md-gold); }
+.md-header-cta__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.md-header-cta__actions .md-btn--sm { min-width: 0; padding: 6px 12px; }
+@media (max-width: 900px) { .md-header-cta__nav { order: 3; width: 100%; } }
+@media (max-width: 640px) { .md-header-cta__inner { justify-content: center; } .md-header-cta__nav { display: none; } }
+
+/* Главная: копия + видео */
+.md-hero-duo { padding: 28px 0 10px; }
+.md-hero-duo__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 28px; align-items: center; }
+.md-hero-duo__h1 { margin: 0 0 14px; font-family: var(--md-font-pixel); font-size: clamp(20px, 2.8vw, 30px); line-height: 1.35;
+  text-transform: uppercase; color: var(--md-text); text-shadow: 0 3px 0 rgba(0, 0, 0, 0.55); }
+.md-hero-duo__lead { margin: 0 0 16px; font-size: 15.5px; line-height: 1.6; color: var(--md-text-soft); }
+.md-hero-duo__lead strong { color: var(--md-gold-top); }
+.md-hero-duo__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.md-hero-duo__note { margin: 12px 0 0; font-size: 13px; color: rgba(255, 255, 255, 0.7); }
+.md-hero-duo__media { display: grid; gap: 14px; justify-items: center; }
+.md-hero-duo__grid { grid-template-columns: 1.25fr 0.75fr; }
+.md-hero-duo__frame { width: min(280px, 100%); aspect-ratio: 9 / 16; background: #000; border: 4px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), inset 0 0 0 2px rgba(255, 255, 255, 0.1); overflow: hidden; }
+.md-hero-duo__frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.md-hero-duo__tag { width: min(340px, 80%); height: auto; filter: drop-shadow(0 6px 10px var(--md-shadow)); }
+@media (max-width: 860px) {
+  .md-hero-duo__grid { grid-template-columns: 1fr; gap: 20px; }
+  .md-hero-duo__copy { text-align: center; }
+  .md-hero-duo__actions { justify-content: center; }
+  .md-hero-duo__frame { width: min(260px, 100%); }
+}
+
+/* Промо 04-stats-row */
+.md-promo-stats { padding: 8px 0 14px; }
+.md-promo-stats__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.md-promo-stats__item { background: var(--md-panel); border: 3px solid var(--md-panel-border);
+  box-shadow: inset 0 0 0 2px var(--md-panel-inset); padding: 14px 10px; text-align: center; display: grid; gap: 6px; }
+.md-promo-stats__val { font-family: var(--md-font-pixel); font-size: clamp(20px, 2.6vw, 26px); color: var(--md-gold);
+  text-shadow: 0 3px 0 var(--md-shadow); text-transform: uppercase; }
+.md-promo-stats__label { font-size: 12px; color: var(--md-text-soft); text-transform: lowercase; }
+@media (max-width: 760px) { .md-promo-stats__row { grid-template-columns: repeat(2, 1fr); } }
+
+/* VPN компактно */
+.md-vpn-plain { padding: 6px 0 14px; }
+.md-vpn-plain__inner { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
+.md-vpn-plain__text { font-size: 13.5px; color: rgba(255, 255, 255, 0.72); }
+.md-vpn-plain__cta { min-width: 0; height: auto; font-size: 13px; padding: 8px 18px; letter-spacing: 0.08em; }
+
+/* Об игре: несколько абзацев */
+.md-about-split__panel { display: grid; gap: 12px; }
+.md-about-split__media img { width: min(340px, 62vw); }
+
+/* Механика 02-video-features */
+.md-promo-features { padding: 10px 0 18px; }
+.md-promo-features__panel { display: grid; gap: 12px; }
+.md-promo-features__lead { margin: 0; font-size: 15px; line-height: 1.5; color: var(--md-text-soft); text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
+.md-promo-features__list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 14px; line-height: 1.45; color: var(--md-text-soft); }
+.md-promo-features__list--2col { grid-template-columns: 1fr 1fr; gap: 10px 22px; }
+.md-promo-features__list li { position: relative; padding-left: 18px; }
+.md-promo-features__list li::before { content: "\25A0"; position: absolute; left: 0; color: var(--md-bullet); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.55); }
+.md-promo-features__list strong { color: var(--md-gold-top); }
+@media (max-width: 720px) { .md-promo-features__list--2col { grid-template-columns: 1fr; } }
+
+/* Бонусы: примечание */
+.md-note { margin: 14px auto 0; max-width: 720px; text-align: center; font-size: 13px; line-height: 1.5; color: rgba(255, 255, 255, 0.72); }
+
+/* Как играть: 4 шага + текст */
+.md-how-h__row--4 { grid-template-columns: repeat(4, 1fr); }
+.md-how-h__text { margin-top: 14px; display: grid; gap: 10px; }
+.md-how-h__text p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--md-text-soft); }
+.md-how-h__text strong { color: var(--md-gold-top); }
+@media (max-width: 900px) { .md-how-h__row--4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .md-how-h__row--4 { grid-template-columns: 1fr; } }
+
+/* Демо */
+.md-demo { padding: 10px 0 18px; }
+.md-demo__panel { display: grid; gap: 12px; }
+.md-demo__panel p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--md-text-soft); }
+.md-demo__panel strong { color: var(--md-gold-top); }
+.md-demo__actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+
+/* Промо 03-crimson-banner */
+.md-promo-crimson { padding: 16px 0 22px; }
+.md-promo-crimson__card { display: grid; justify-items: center; gap: 14px; text-align: center; padding: 26px 24px 30px;
+  border: 8px solid #e8a113; background: radial-gradient(circle at 50% 35%, #5d1414 0%, #4b0f10 62%, #3d0c0d 100%);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5); color: #ffe14a; }
+.md-promo-crimson__gem { width: 110px; height: auto; image-rendering: pixelated; filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.45)); }
+.md-promo-crimson__card .md-mc--promo { font-size: clamp(26px, 4vw, 40px); justify-items: center; }
+.md-promo-crimson__text { margin: 0; max-width: 520px; font-size: 15px; line-height: 1.45; color: #ffe98a; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45); }
+
+/* Подвал: партнёры */
+.md-footer-split__partners { margin: 0; width: 100%; font-size: 12px; color: rgba(255, 255, 255, 0.6); }
+.md-footer-split__partners a { color: var(--md-gold); text-decoration: none; }
+.md-footer-split__partners a:hover { text-decoration: underline; }
+
+/* md-mc: один текстовый узел — сам элемент рисует тень, ::before обводку, ::after золотую заливку */
+.md-mc { position: relative; display: block; text-align: center; padding-top: 5px;
+  color: var(--md-stroke); -webkit-text-fill-color: var(--md-stroke); background: none; }
+.md-mc::before, .md-mc::after { content: attr(data-text); position: absolute; left: 0; right: 0; top: 0; text-align: center; pointer-events: none; }
+.md-mc::before { -webkit-text-stroke: 4px var(--md-stroke); color: transparent; -webkit-text-fill-color: transparent; }
+.md-mc::after { background: linear-gradient(180deg, var(--md-gold-top) 0%, var(--md-gold-bot) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.md-mc--section { font-size: clamp(24px, 3.4vw, 34px); margin: 0 0 14px; }
+.md-notify__title { padding-top: 5px; }

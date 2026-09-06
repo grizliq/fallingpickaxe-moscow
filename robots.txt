@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /js/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&from /
+
+Sitemap: https://fallingpickaxe.moscow/sitemap.xml
+Host: https://fallingpickaxe.moscow
