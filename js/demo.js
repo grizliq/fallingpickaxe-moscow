@@ -4,7 +4,8 @@
   if (!w) return;
   var body = document.getElementById('fpwBody'), load = document.getElementById('fpwLoad'), bait = document.getElementById('fpwBait'),
       API = 'https://games.pixmove.co/api/games/game/demo/?partnerId=1&gameId=63&hash=' + w.getAttribute('data-hash'),
-      iframe = null, started = false, baitTimer = null, loadTimer = null, baitShown = 0;
+      iframe = null, started = false, baitTimer = null, loadTimer = null, baitShown = 0,
+      exitCard = document.getElementById('fpwExit'), exitShown = false, exitTimer = null;
 
   function lock(on) { document.body.style.overflow = on ? 'hidden' : ''; }
 
@@ -45,10 +46,18 @@
       .catch(fail);
   }
 
-  function open() { w.hidden = false; w.classList.remove('is-min'); lock(true); start(); }
-  function min() { w.classList.add('is-min'); w.classList.remove('is-full'); lock(false); }
+  function showExit() {
+    if (!exitCard || exitShown || !started) return;
+    exitShown = true; exitCard.hidden = false;
+    clearTimeout(exitTimer); exitTimer = setTimeout(function () { exitCard.hidden = true; }, 30000);
+  }
+  function hideExit() { if (exitCard) exitCard.hidden = true; clearTimeout(exitTimer); }
+
+  function open() { hideExit(); w.hidden = false; w.classList.remove('is-min'); lock(true); start(); }
+  function min() { w.classList.add('is-min'); w.classList.remove('is-full'); lock(false); showExit(); }
   function restore() { w.classList.remove('is-min'); lock(true); }
   function close() {
+    showExit();
     w.hidden = true; w.classList.remove('is-min', 'is-full'); lock(false);
     if (iframe) { iframe.remove(); iframe = null; }
     started = false; clearTimeout(baitTimer); clearTimeout(loadTimer); bait.hidden = true;
@@ -63,6 +72,7 @@
   document.getElementById('fpwClose').addEventListener('click', function (e) { e.stopPropagation(); close(); });
   document.getElementById('fpwBar').addEventListener('click', function () { if (w.classList.contains('is-min')) restore(); });
   var bx = bait.querySelector('[data-bait-close]'); if (bx) bx.addEventListener('click', hideBait);
+  if (exitCard) Array.prototype.forEach.call(exitCard.querySelectorAll('[data-exit-close]'), function (b) { b.addEventListener('click', hideExit); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !w.hidden && !w.classList.contains('is-min')) min(); });
   window.__fpwOpen = function () { return !w.hidden && !w.classList.contains('is-min'); };
 })();

@@ -193,3 +193,14 @@
   .fpw.is-min { inset: auto 10px 10px 10px; }
   .fpw__bait { right: 10px; left: 10px; width: auto; }
 }
+
+/* карточка при сворачивании/закрытии демо */
+.fpw-exit { position: fixed; right: 18px; bottom: 90px; z-index: 10001; width: min(340px, calc(100vw - 36px)); padding: 18px 16px 12px; display: grid; gap: 8px; justify-items: center; text-align: center;
+  border: 5px solid #e8a113; background: radial-gradient(circle at 50% 35%, #5d1414 0%, #4b0f10 62%, #3d0c0d 100%); box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6); animation: fpwbait .3s ease; }
+.fpw-exit[hidden] { display: none; }
+.fpw-exit__title { margin: 0; font-family: var(--md-font-pixel); font-size: 20px; color: #ffe14a; text-shadow: 0 3px 0 rgba(0, 0, 0, 0.55); }
+.fpw-exit__text { margin: 0; font-size: 13px; line-height: 1.45; color: #ffe98a; }
+.fpw-exit .md-btn { min-width: 0; padding: 8px 18px; font-size: 13px; }
+.fpw-exit__x { position: absolute; top: 2px; right: 8px; border: 0; background: none; color: rgba(255, 255, 255, 0.6); font-size: 22px; line-height: 1; cursor: pointer; }
+.fpw-exit__later { border: 0; background: none; color: rgba(255, 255, 255, 0.55); font-size: 12px; text-decoration: underline; cursor: pointer; }
+@media (max-width: 720px) { .fpw-exit { right: 10px; left: 10px; width: auto; bottom: 80px; } }
