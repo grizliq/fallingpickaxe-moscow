@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="css/buttons.css" />
   <link rel="stylesheet" href="css/palette-dark.css" />
   <link rel="stylesheet" href="css/style.css?v=1" />
-  <link rel="stylesheet" href="css/site.css?v=6" />
+  <link rel="stylesheet" href="css/site.css?v=8" />
 
   <script type="application/ld+json">
   {
@@ -145,7 +145,7 @@
           </p>
           <div class="md-hero-duo__actions">
             <a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ИГРАТЬ СЕЙЧАС</span></a>
-            <a class="md-btn" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ОТКРЫТЬ В ТГ</span></a>
+            <a class="md-btn" href="#demo" data-demo-start><span>ИГРАТЬ ДЕМО</span></a>
           </div>
           <p class="md-hero-duo__note">Falling Pickaxe играть онлайн · демо без регистрации · механику поймёшь за минуту · 18+</p>
         </div>
@@ -165,6 +165,26 @@
         <div class="md-promo-stats__item"><span class="md-promo-stats__val">30 FS</span><span class="md-promo-stats__label">фриспины на старте</span></div>
         <div class="md-promo-stats__item"><span class="md-promo-stats__val">1 мин</span><span class="md-promo-stats__label">чтобы понять механику</span></div>
         <div class="md-promo-stats__item"><span class="md-promo-stats__val">24/7</span><span class="md-promo-stats__label">браузер и telegram</span></div>
+      </div>
+    </section>
+
+
+    <!-- ═══ Демо ═══ -->
+    <section class="md-demo" id="demo" aria-labelledby="demo-title">
+      <div class="md-wrap md-demo__inner">
+        <h2 class="md-title" id="demo-title">FALLING PICKAXE ДЕМО: ИГРАТЬ БЕСПЛАТНО</h2>
+        <div class="md-panel md-demo__panel">
+          <p>
+            <strong>Демо Falling Pickaxe</strong> — та же игра на виртуальный баланс: без регистрации, депозита и ограничений по времени. В демо доступны все механики — каскады, TNT, апгрейды кирки и сундуки, — поэтому это лучший способ понять «падающую кирку» перед игрой на деньги. Выигрыши в демо не выводятся.
+          </p>
+          <p>
+            Демо открывается в окне поверх страницы — официальная версия от Pixmove, ничего устанавливать не нужно. Окно можно свернуть и вернуться: баланс сохранится. Когда захочешь играть на реальные деньги, переключись в основной режим: 30 фриспинов на старте уже закреплены за аккаунтом.
+          </p>
+          <div class="md-demo__actions">
+            <button class="md-btn md-btn--gold md-btn--lg" type="button" data-demo-start><span>ЗАПУСТИТЬ ДЕМО</span></button>
+            <a class="md-btn" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ИГРАТЬ НА ДЕНЬГИ</span></a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -257,25 +277,6 @@
       </div>
     </section>
 
-    <!-- ═══ Демо ═══ -->
-    <section class="md-demo" id="demo" aria-labelledby="demo-title">
-      <div class="md-wrap md-demo__inner">
-        <h2 class="md-title" id="demo-title">FALLING PICKAXE ДЕМО: ИГРАТЬ БЕСПЛАТНО</h2>
-        <div class="md-panel md-demo__panel">
-          <p>
-            <strong>Демо Falling Pickaxe</strong> — та же игра на виртуальный баланс: без регистрации, депозита и ограничений по времени. В демо доступны все механики — каскады, TNT, апгрейды кирки и сундуки, — поэтому это лучший способ понять «падающую кирку» перед игрой на деньги. Выигрыши в демо не выводятся.
-          </p>
-          <p>
-            Нажми «Играть демо» — откроется официальный вход в игру, где демо-режим включается одной кнопкой. Когда захочешь играть на реальные деньги, переключись в основной режим: 30 фриспинов на старте уже закреплены за аккаунтом.
-          </p>
-          <div class="md-demo__actions">
-            <a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ИГРАТЬ ДЕМО</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <!-- ═══ Разделы ═══ -->
     <section class="md-sub" id="razdely" aria-labelledby="hub-title">
       <div class="md-wrap">
@@ -342,6 +343,43 @@
     </div>
   </div>
 
-  <script src="js/modal.js?v=1"></script>
+  <!-- ═══ Окно демо (Pixmove, сворачиваемое) ═══ -->
+  <div class="fpw" id="fpw" hidden data-hash="7f86f75159e785cccee3dcf6161a2318617e94dd27a2a359cd25d594a0e97f4b">
+    <div class="fpw__win" role="dialog" aria-modal="true" aria-label="Falling Pickaxe демо">
+      <div class="fpw__bar" id="fpwBar">
+        <div class="fpw__title"><i class="fpw__dot"></i>FALLING PICKAXE <span>· демо · Pixmove</span></div>
+        <div class="fpw__acts">
+          <button class="fpw__ib" id="fpwMin" type="button" aria-label="Свернуть" title="Свернуть">—</button>
+          <button class="fpw__ib" id="fpwFull" type="button" aria-label="На весь экран" title="На весь экран">⛶</button>
+          <button class="fpw__ib" id="fpwClose" type="button" aria-label="Закрыть" title="Закрыть">×</button>
+        </div>
+      </div>
+      <div class="fpw__body" id="fpwBody">
+        <div class="fpw__load" id="fpwLoad">
+          <div class="fpw__spin"></div>
+          <div class="fpw__wait">Загружаем демо…</div>
+          <div class="fpw__fb">
+            <p class="fpw__fb-title">ДЕМО-СЕРВЕР НЕ ОТВЕЧАЕТ</p>
+            <p>Откройте игру на сайте — там есть и демо, и игра в рублях.</p>
+            <a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ИГРАТЬ НА САЙТЕ</span></a>
+          </div>
+        </div>
+        <div class="fpw__bait" id="fpwBait" hidden>
+          <button class="fpw__bait-x" type="button" aria-label="Закрыть" data-bait-close>×</button>
+          <p class="fpw__bait-title">30 ФРИСПИНОВ ЖДУТ</p>
+          <p class="fpw__bait-text">Демо-выигрыш не выводится. На реальном счёте — 30 бесплатных бросков кирки при первом заходе и бонус на депозит.</p>
+          <a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ЗАБРАТЬ ФРИСПИНЫ</span></a>
+          <button class="fpw__bait-later" type="button" data-bait-close>Позже</button>
+        </div>
+      </div>
+      <div class="fpw__foot">
+        <span><b>Демо-баланс не выводится</b> — 30 фриспинов ждут на реальном счёте</span>
+        <a class="md-btn md-btn--gold md-btn--sm" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ЗАБРАТЬ ФРИСПИНЫ</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/modal.js?v=2"></script>
+  <script src="js/demo.js?v=2"></script>
 </body>
 </html>

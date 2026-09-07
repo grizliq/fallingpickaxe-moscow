@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="/css/buttons.css" />
   <link rel="stylesheet" href="/css/palette-dark.css" />
   <link rel="stylesheet" href="/css/style.css?v=1" />
-  <link rel="stylesheet" href="/css/site.css?v=6" />
+  <link rel="stylesheet" href="/css/site.css?v=8" />
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
@@ -64,7 +64,7 @@
         <h1 class="md-hero-duo__h1" id="page-title">Falling Pickaxe бонус: фриспины, промокод, депозит</h1>
         <div class="md-panel md-sub__intro">
 <p><strong>Бонусы Falling Pickaxe</strong> начинаются с <strong>30 фриспинов</strong> при первом заходе — это бесплатные броски кирки без депозита. Дальше — бонус на первый депозит до 360% + 250 FS на площадке, промокоды на фриспины и пиковые часы, когда множители повышены. Ниже — как всё это активировать и на что обратить внимание при отыгрыше.</p>
-          <div class="md-sub__cta"><a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ИГРАТЬ</span></a><a class="md-btn" href="/demo/" title="Демо Falling Pickaxe"><span>ДЕМО</span></a></div>
+          <div class="md-sub__cta"><a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ИГРАТЬ</span></a><a class="md-btn" href="/demo/" data-demo-start><span>ДЕМО</span></a></div>
         </div>
       </div>
     </section>
@@ -129,6 +129,41 @@
       <p class="md-notify__lead">Стартовый пакет бросков закреплён за тобой.<br />Забери его при первом заходе в Falling Pickaxe.</p>
       <a class="md-btn md-btn--gold md-notify__cta" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener">ЗАБРАТЬ 30 ФРИСПИНОВ</a>
       <button class="md-notify__skip" type="button" data-md-notify-close>Позже</button>
+    </div>
+  </div>
+
+  <div class="fpw" id="fpw" hidden data-hash="7f86f75159e785cccee3dcf6161a2318617e94dd27a2a359cd25d594a0e97f4b">
+    <div class="fpw__win" role="dialog" aria-modal="true" aria-label="Falling Pickaxe демо">
+      <div class="fpw__bar" id="fpwBar">
+        <div class="fpw__title"><i class="fpw__dot"></i>FALLING PICKAXE <span>· демо · Pixmove</span></div>
+        <div class="fpw__acts">
+          <button class="fpw__ib" id="fpwMin" type="button" aria-label="Свернуть" title="Свернуть">—</button>
+          <button class="fpw__ib" id="fpwFull" type="button" aria-label="На весь экран" title="На весь экран">⛶</button>
+          <button class="fpw__ib" id="fpwClose" type="button" aria-label="Закрыть" title="Закрыть">×</button>
+        </div>
+      </div>
+      <div class="fpw__body" id="fpwBody">
+        <div class="fpw__load" id="fpwLoad">
+          <div class="fpw__spin"></div>
+          <div class="fpw__wait">Загружаем демо…</div>
+          <div class="fpw__fb">
+            <p class="fpw__fb-title">ДЕМО-СЕРВЕР НЕ ОТВЕЧАЕТ</p>
+            <p>Откройте игру на сайте — там есть и демо, и игра в рублях.</p>
+            <a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ИГРАТЬ НА САЙТЕ</span></a>
+          </div>
+        </div>
+        <div class="fpw__bait" id="fpwBait" hidden>
+          <button class="fpw__bait-x" type="button" aria-label="Закрыть" data-bait-close>×</button>
+          <p class="fpw__bait-title">30 ФРИСПИНОВ ЖДУТ</p>
+          <p class="fpw__bait-text">Демо-выигрыш не выводится. На реальном счёте — 30 бесплатных бросков кирки при первом заходе и бонус на депозит.</p>
+          <a class="md-btn md-btn--gold" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ЗАБРАТЬ ФРИСПИНЫ</span></a>
+          <button class="fpw__bait-later" type="button" data-bait-close>Позже</button>
+        </div>
+      </div>
+      <div class="fpw__foot">
+        <span><b>Демо-баланс не выводится</b> — 30 фриспинов ждут на реальном счёте</span>
+        <a class="md-btn md-btn--gold md-btn--sm" href="https://gamewin777.ink/0HFK8a" target="_blank" rel="sponsored noopener"><span>ЗАБРАТЬ ФРИСПИНЫ</span></a>
+      </div>
     </div>
   </div>
 
@@ -216,6 +251,7 @@
   ]
 }
   </script>
-  <script src="/js/modal.js?v=1"></script>
+  <script src="/js/modal.js?v=2"></script>
+  <script src="/js/demo.js?v=2"></script>
 </body>
 </html>

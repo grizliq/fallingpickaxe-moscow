@@ -12,6 +12,7 @@
 
   function open() {
     if (opened) return;
+    if (window.__fpwOpen && window.__fpwOpen()) { maxTimer = setTimeout(open, 20000); return; }
     opened = true;
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
